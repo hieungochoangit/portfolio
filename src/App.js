@@ -1,9 +1,10 @@
 // Components
 import Main from "./components/Main";
 import About from "./components/Pages/About";
-import styled, { ThemeProvider } from "styled-components";
+import styled, { keyframes, ThemeProvider } from "styled-components";
 import GlobalStyle, { darkTheme, lightTheme } from "./global/globalStyle";
 import { useState } from "react";
+import { BsArrowRepeat } from 'react-icons/bs';
 
 // Routes
 import { Routes, Route } from 'react-router-dom';
@@ -57,6 +58,33 @@ const ToggleThemeButton = styled.div`
   }
 `
 
+const rotateKeyframes = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+`
+
+const SettingPrimaryColor = styled.span`
+  position: fixed;
+  right: 10px;
+  top: 100px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: ${rotateKeyframes} 2s linear infinite;
+
+  svg {
+    font-size: 40px;
+  }
+`
+
 function App() {
   const [theme, setTheme] = useState('dark');
 
@@ -77,6 +105,10 @@ function App() {
         <input type="checkbox" id="switch" className="switch-input"/>
         <label htmlFor="switch" className="switch"></label>
       </ToggleThemeButton>
+
+      <SettingPrimaryColor>
+        <BsArrowRepeat />
+      </SettingPrimaryColor>
     </ThemeProvider>
   );
 }
