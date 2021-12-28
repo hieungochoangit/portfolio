@@ -16,7 +16,7 @@ const ToggleThemeButton = styled.div`
   display: inline;
 
   @media (max-width: 500px) {
-    bottom: 50%;
+    bottom: 14%;
   }
 
   .switch {
@@ -85,15 +85,49 @@ const SettingPrimaryColor = styled.span`
   }
 `
 
+const ListPrimaryColor = styled.div`
+  position: fixed;
+  top: 160px;
+  right: 10px;
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 1s;
+  transform: ${props => props.showPrimaryList ? 'translateX(0)' : 'translateX(150%)'};
+`
+
+const ColorBox = styled.div`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid ${props => props.theme.text};
+  margin: 2px 0;
+  cursor: pointer;
+  background: ${props => props.color};
+`
+
 function App() {
   const [theme, setTheme] = useState('dark');
+  const [showPrimaryList, setshowPrimaryList] = useState(false);
+
+  // Primary color list
+  const primarys = ['red', 'blue', 'orange', 'green', 'pink'];
 
   const handleToggleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
   }
 
+  const handleToggleButtonChangePrimaryColor = () => {
+    setshowPrimaryList(!showPrimaryList);
+  };
+
+  const handleChangePrimaryColor = (color) => {
+    document.documentElement.style.setProperty('--primary-color', color);
+  }
+
   return (
-    <ThemeProvider theme={theme === 'dark' ? lightTheme : darkTheme}>
+    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyle />
 
       <Routes>
@@ -106,9 +140,14 @@ function App() {
         <label htmlFor="switch" className="switch"></label>
       </ToggleThemeButton>
 
-      <SettingPrimaryColor>
+      {/* Handle change primary color */}
+      <SettingPrimaryColor onClick={handleToggleButtonChangePrimaryColor}>
         <BsArrowRepeat />
       </SettingPrimaryColor>
+
+      <ListPrimaryColor showPrimaryList={showPrimaryList}>
+        {primarys.map((color) => <ColorBox color={color} key={color} onClick={() => handleChangePrimaryColor(color)} />)}
+      </ListPrimaryColor>
     </ThemeProvider>
   );
 }
