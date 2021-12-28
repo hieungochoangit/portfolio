@@ -162,11 +162,6 @@ const Contact = styled.div`
 
   svg {
     cursor: pointer;
-    transition: 1s;
-
-    &:hover {
-      transform: translateX(20px);
-    }
   }
 
   @media (max-width: 500px) {
