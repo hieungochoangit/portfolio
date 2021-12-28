@@ -10,6 +10,7 @@ import HeroImage from '../../assets/img/hero.jpg';
 
 // Routes
 import { Link } from 'react-router-dom';
+import Button from '../Button';
 
 const MainSection = styled.div`
   width: 100vw;
@@ -121,6 +122,7 @@ const HeroIntro = styled.div`
 
   p {
     font-style: italic;
+    margin-bottom: 14px;
   }
 
   &:after {
@@ -142,6 +144,10 @@ const HeroIntro = styled.div`
     bottom: 0;
     right: 0;
   }
+`
+
+const Center = styled.div`
+  text-align: center;
 `
 
 const Contact = styled.div`
@@ -292,6 +298,10 @@ function Main(props) {
             steps={["I'm a Frontend Developer ", 5000, "I'm a Copy - Paste Developer", 5000]}
             loop={Infinity}
           />
+
+          <Center>
+            <Button text='More About Me' type='link' href='/about' />
+          </Center>
         </HeroIntro>
       </Hero>
 
