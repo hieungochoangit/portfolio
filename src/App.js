@@ -83,6 +83,7 @@ const SettingPrimaryColor = styled.span`
 
   svg {
     font-size: 40px;
+    fill: var(--primary-color);
   }
 `
 
@@ -125,6 +126,7 @@ function App() {
 
   const handleChangePrimaryColor = (color) => {
     document.documentElement.style.setProperty('--primary-color', color);
+    setshowPrimaryList(!showPrimaryList);
   }
 
   return (
