@@ -199,6 +199,7 @@ const Menu = styled.div`
 
   @media (max-width: 768px) {
     width: 100%;
+    box-shadow: none;
   }
 
   svg {
