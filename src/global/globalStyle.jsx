@@ -17,6 +17,10 @@ const GlobalStyle = createGlobalStyle`
   body {
     overflow-x: hidden;
   }
+
+  a {
+    text-decoration: none;
+  }
 `;
 
 export const lightTheme = {

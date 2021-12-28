@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Typical from 'react-typical';
 
 // Icons
-import { BsFacebook, BsGithub, BsTelegram, BsInstagram, BsMailbox } from 'react-icons/bs';
+import { BsFacebook, BsGithub, BsTelegram, BsInstagram, BsMailbox, BsArrowBarRight } from 'react-icons/bs';
 
 // Images
 import HeroImage from '../../assets/img/hero.jpg';
+
+// Routes
+import { Link } from 'react-router-dom';
 
 const MainSection = styled.div`
   width: 100vw;
@@ -183,13 +186,90 @@ const ContactLine = styled.div`
   background: ${props => props.theme.text}
 `
 
+const Menu = styled.div`
+  position: fixed;
+  right: 0;
+  padding: 20px;
+  width: 400px;
+  background: ${props => props.theme.body};
+  height: 100vh;
+  z-index: 10;
+  transition: all 1s;
+  box-shadow: -10px 0px 10px 0px ${props => props.showMenu ? props.theme.text : props.theme.body};
+  transform: translateX(${props => props.showMenu ? '0%' : '100%'});
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+  svg {
+    font-size: 24px;
+    color: ${props => props.theme.text};
+    cursor: pointer;
+  }
+
+  a {
+    display: block;
+    text-align: right;
+    padding: 10px;
+    font-size: 30px;
+    transition: 0.8s;
+
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+
+    &:hover span {
+      color: var(--primary-color);
+    }
+
+    &:hover span:after, &:hover span:before {
+      width: 50%;
+    }
+
+    span {
+      position: relative;
+      transition: 0.8s;
+      font-family: 'Shizuru', cursive;
+
+      &:after {
+        position: absolute;
+        transition: 1s;
+        content: '';
+        width: 0%;
+        height: 2px;
+        background: var(--primary-color);
+        bottom: 0;
+        right: 0;
+      }
+
+      &:before {
+        position: absolute;
+        transition: 1s;
+        content: '';
+        width: 0%;
+        height: 2px;
+        background: var(--primary-color);
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+`
+
 function Main(props) {
+  const [showMenu, setShowMenu] = useState(false);
+
+  const handleToggleMenu = () => {
+    setShowMenu(!showMenu);
+  }
+
   return (
     <MainSection>
       {/* Nav */}
       <Nav>
         <Logo>Hieu</Logo>
-        <Bar>
+        <Bar onClick={handleToggleMenu}>
           <Line />
           <Line />
           <Line />
@@ -223,6 +303,23 @@ function Main(props) {
 
         <ContactLine />
       </Contact>
+
+      <Menu showMenu={showMenu}>
+        <BsArrowBarRight onClick={handleToggleMenu} />
+
+        <Link to='/about'>
+          <span>About me</span>
+        </Link>
+        <Link to='/service'>
+          <span>Services</span>
+        </Link>
+        <Link to='/portfolio'>
+          <span>Portfolio</span>
+        </Link>
+        <Link to='/contact'>
+          <span>Contact</span>
+        </Link>
+      </Menu>
     </MainSection>
   );
 }
