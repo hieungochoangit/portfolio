@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Typical from 'react-typical';
 
 // Icons
-import { BsFacebook, BsGithub, BsTelegram, BsInstagram, BsMailbox, BsArrowBarRight } from 'react-icons/bs';
+import { BsFacebook, BsGithub, BsTelegram, BsInstagram, BsMailbox, BsArrowBarRight, BsLinkedin } from 'react-icons/bs';
 
 // Images
 import HeroImage from '../../assets/img/hero.jpg';
@@ -317,6 +317,9 @@ function Main(props) {
         </a>
         <a href="https://github.com/hieungochoangit" target='_blank' rel="noreferrer">
           <BsTelegram title='Telegram' />
+        </a>
+        <a href="https://www.linkedin.com/in/hieungochoang/" target='_blank' rel="noreferrer">
+          <BsLinkedin title='Linkedin' />
         </a>
         <a href="https://github.com/hieungochoangit" target='_blank' rel="noreferrer">
           <BsGithub title='Github' />
