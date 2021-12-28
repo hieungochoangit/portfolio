@@ -4,7 +4,7 @@ import About from "./components/Pages/About";
 import styled, { keyframes, ThemeProvider } from "styled-components";
 import GlobalStyle, { darkTheme, lightTheme } from "./global/globalStyle";
 import { useState } from "react";
-import { BsArrowRepeat } from 'react-icons/bs';
+import { IoSettings } from 'react-icons/io5';
 
 // Routes
 import { Routes, Route } from 'react-router-dom';
@@ -145,7 +145,7 @@ function App() {
 
       {/* Handle change primary color */}
       <SettingPrimaryColor onClick={handleToggleButtonChangePrimaryColor}>
-        <BsArrowRepeat />
+        <IoSettings />
       </SettingPrimaryColor>
 
       <ListPrimaryColor showPrimaryList={showPrimaryList}>
