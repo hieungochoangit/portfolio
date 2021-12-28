@@ -155,8 +155,12 @@ const Contact = styled.div`
   align-items: center;
   font-size: 24px;
 
+  a {
+    display: inline-block;
+    margin: 4px 0;
+  }
+
   svg {
-    margin: 10px 0;
     cursor: pointer;
     transition: 1s;
 
@@ -295,11 +299,21 @@ function Main(props) {
       <Contact>
         <ContactLine />
 
-        <BsMailbox title='Mail' />
-        <BsInstagram title='Instagram' />
-        <BsTelegram title='Telegram' />
-        <BsGithub title='Github' />
-        <BsFacebook title='Facebook' />
+        <a href="https://github.com/hieungochoangit" target='_blank' rel="noreferrer">
+          <BsMailbox title='Mail' />
+        </a>
+        <a href="https://github.com/hieungochoangit" target='_blank' rel="noreferrer">
+          <BsInstagram title='Instagram' />
+        </a>
+        <a href="https://github.com/hieungochoangit" target='_blank' rel="noreferrer">
+          <BsTelegram title='Telegram' />
+        </a>
+        <a href="https://github.com/hieungochoangit" target='_blank' rel="noreferrer">
+          <BsGithub title='Github' />
+        </a>
+        <a href="https://www.facebook.com/hoangngochieu97/" target='_blank' rel="noreferrer">
+          <BsFacebook title='Facebook' />
+        </a>
 
         <ContactLine />
       </Contact>
