@@ -11,6 +11,7 @@ import HeroImage from '../../assets/img/hero.jpg';
 // Routes
 import { Link } from 'react-router-dom';
 import Button from '../Button';
+import BaseShadowButton from '../BaseShadowButton';
 
 const MainSection = styled.div`
   width: 100vw;
@@ -87,10 +88,6 @@ const Hero = styled.div`
     left: 0;
   }
 
-  div {
-    margin: 0 10px;
-  }
-
   @media (max-width: 768px) {
     flex-direction: column;
     padding: 20px;
@@ -102,6 +99,14 @@ const HeroImg = styled.div`
   height: 200px;
   border-radius: 50%;
   overflow: hidden;
+  border: 2px solid var(--primary-color);
+  padding: 10px;
+  transition: 1s;
+  box-shadow: inset 3px 3px 3px var(--primary-color), inset -3px -3px 3px ${props => props.theme.text};
+
+  &:hover {
+    box-shadow: inset 3px 3px 3px ${props => props.theme.text}, inset -3px -3px 3px var(--primary-color);
+  }
 
   img {
     width: 100%;
@@ -116,6 +121,8 @@ const HeroImg = styled.div`
 `
 
 const HeroIntro = styled.div`
+  margin: 10px 20px 0 20px;
+
   span {
     color: var(--primary-color);
   }
@@ -288,9 +295,11 @@ function Main(props) {
 
       {/* Intro */}
       <Hero>
-        <HeroImg>
-          <img src={HeroImage} alt="" />
-        </HeroImg>
+        <BaseShadowButton isRadius>
+          <HeroImg>
+            <img src={HeroImage} alt="" />
+          </HeroImg>
+        </BaseShadowButton>
         <HeroIntro>
           <h1><span>Hi,</span> I'm HieuNgocHoang</h1>
 

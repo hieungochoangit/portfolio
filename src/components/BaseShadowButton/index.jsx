@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const BaseShadow = styled.div`
   display: inline-block;
   transition: 1s;
-  border-radius: 4px;
+  border-radius: ${props => props.isRadius ? '50%' : '4px'};
   box-shadow: var(--primary-color) 3px 3px 0px 0px, ${props => props.theme.text} calc(-3px) calc(-3px) 0px 0px;
 
   &:hover {
@@ -12,9 +12,9 @@ const BaseShadow = styled.div`
   }
 `
 
-function BaseShadowButton({ children }) {
+function BaseShadowButton({ children, isRadius }) {
   return (
-    <BaseShadow>
+    <BaseShadow isRadius={isRadius}>
       {children}
     </BaseShadow>
   );
