@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Typical from 'react-typical';
 
@@ -263,6 +263,10 @@ const Menu = styled.div`
 
 function Main(props) {
   const [showMenu, setShowMenu] = useState(false);
+
+  useEffect(() => {
+    document.title = 'Hoàng Ngọc Hiếu - hieuhn'
+  }, []);
 
   const handleToggleMenu = () => {
     setShowMenu(!showMenu);
