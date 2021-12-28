@@ -97,6 +97,11 @@ const ListPrimaryColor = styled.div`
   align-items: center;
   transition: 1s;
   transform: ${props => props.showPrimaryList ? 'translateX(0)' : 'translateX(150%)'};
+
+  div:first-child {
+    font-size: 12px;
+    text-align: center;
+  }
 `
 
 const ColorBox = styled.div`
@@ -149,7 +154,10 @@ function App() {
       </SettingPrimaryColor>
 
       <ListPrimaryColor showPrimaryList={showPrimaryList}>
-        {primarys.map((color) => <ColorBox color={color} key={color} onClick={() => handleChangePrimaryColor(color)} />)}
+        <div>Theme Colors</div>
+        <div>
+          {primarys.map((color) => <ColorBox color={color} key={color} onClick={() => handleChangePrimaryColor(color)} />)}
+        </div>
       </ListPrimaryColor>
     </ThemeProvider>
   );
