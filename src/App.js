@@ -3,11 +3,14 @@ import Main from "./components/Main";
 import About from "./components/Pages/About";
 import styled, { keyframes, ThemeProvider } from "styled-components";
 import GlobalStyle, { darkTheme, lightTheme } from "./global/globalStyle";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoSettings } from 'react-icons/io5';
 
 // Routes
 import { Routes, Route } from 'react-router-dom';
+import Loading from "./components/Loading";
+
+const Wrapper = styled.div``
 
 const ToggleThemeButton = styled.div`
   position: fixed;
@@ -117,6 +120,7 @@ const ColorBox = styled.div`
 function App() {
   const [theme, setTheme] = useState('dark');
   const [showPrimaryList, setshowPrimaryList] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Primary color list
   const primarys = ['red', 'blue', 'orange', 'green', 'pink'];
@@ -134,31 +138,41 @@ function App() {
     setshowPrimaryList(!showPrimaryList);
   }
 
+  useEffect(() => {
+    setInterval(() => {
+      setIsLoading(false);
+    }, 3000)
+  }, []);
+
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyle />
 
-      <Routes>
-        <Route exact path="/" element={<Main />} />
-        <Route exact path="/about" element={<About />} />
-      </Routes>
+      {isLoading ? <Loading isLoading={isLoading} /> : (
+        <Wrapper>
+        <Routes>
+          <Route exact path="/" element={<Main />} />
+          <Route exact path="/about" element={<About />} />
+        </Routes>
 
-      <ToggleThemeButton onChange={() => handleToggleTheme()}>
-        <input type="checkbox" id="switch" className="switch-input"/>
-        <label htmlFor="switch" className="switch"></label>
-      </ToggleThemeButton>
+        <ToggleThemeButton onChange={() => handleToggleTheme()}>
+          <input type="checkbox" id="switch" className="switch-input"/>
+          <label htmlFor="switch" className="switch"></label>
+        </ToggleThemeButton>
 
-      {/* Handle change primary color */}
-      <SettingPrimaryColor onClick={handleToggleButtonChangePrimaryColor}>
-        <IoSettings />
-      </SettingPrimaryColor>
+        {/* Handle change primary color */}
+        <SettingPrimaryColor onClick={handleToggleButtonChangePrimaryColor}>
+          <IoSettings />
+        </SettingPrimaryColor>
 
-      <ListPrimaryColor showPrimaryList={showPrimaryList}>
-        <div>Theme Colors</div>
-        <div>
-          {primarys.map((color) => <ColorBox color={color} key={color} onClick={() => handleChangePrimaryColor(color)} />)}
-        </div>
-      </ListPrimaryColor>
+        <ListPrimaryColor showPrimaryList={showPrimaryList}>
+          <div>Theme Colors</div>
+          <div>
+            {primarys.map((color) => <ColorBox color={color} key={color} onClick={() => handleChangePrimaryColor(color)} />)}
+          </div>
+        </ListPrimaryColor>
+        </Wrapper>
+      )}
     </ThemeProvider>
   );
 }
