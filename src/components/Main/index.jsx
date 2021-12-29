@@ -35,6 +35,7 @@ const Nav = styled.nav`
 
 const Logo = styled.h1`
   font-size: 40px;
+  color: var(--primary-color);
 `
 
 const Bar = styled.div`
