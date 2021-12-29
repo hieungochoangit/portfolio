@@ -13,6 +13,7 @@ import { Routes, Route } from 'react-router-dom';
 import Loading from "./components/Loading";
 import Contact from "./components/Pages/Contact";
 import Service from "./components/Pages/Service";
+import Portfolio from "./components/Pages/Portfolio";
 
 const Wrapper = styled.div``
 
@@ -164,6 +165,7 @@ function App() {
             <Route exact path="/about" element={<About />} />
             <Route exact path="/contact" element={<Contact />} />
             <Route exact path="/service" element={<Service />} />
+            <Route exact path="/portfolio" element={<Portfolio />} />
           </Routes>
 
           {/* Contact */}
