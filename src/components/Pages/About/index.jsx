@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import Button from '../../Button';
+import BaseButton from '../../BaseButton';
 import MainHero from '../../MainHero';
 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
@@ -9,6 +9,7 @@ import Skill from '../../Tab/Skill';
 import Experience from '../../Tab/Experience';
 import Education from '../../Tab/Education';
 import CommonLayout from '../../Layouts/CommonLayout';
+import { Link } from 'react-router-dom';
 
 const Content = styled.div`
   display: flex;
@@ -57,13 +58,15 @@ function About(props) {
       <Content>
         <MainHero />
         <Information>
-          <p><span>Hi! My name is Hieu. I am a Web Developer.</span> I'm a web developer with over 1 year of experience building user interfaces. Passionate about web design and optimizing the experience on mobile devices.</p>
+          <p><span>Hi! My name is Hieu. I am a Web Developer.</span> I'm a web developer with over 99 year of experience building user interfaces. Passionate about web design and optimizing the experience on mobile devices.</p>
           <br></br>
-          <p>In addition, I am also a server-side web developer using PHP with 6 months of experience. Experienced in SEO, skilled in creating attractive websites. Committed to customers and products at every level.</p>
+          <p>In addition, I am also a server-side web developer using PHP with 99 months of experience. Experienced in SEO, skilled in creating attractive websites. Committed to customers and products at every level.</p>
 
           <Action>
-            <Button text='Download My CV' />
-            <Button text='Hire Me' />
+            <BaseButton text='Download CV' />
+            <Link to="/contact">
+              <BaseButton text='Hire Me' />
+            </Link>
           </Action>
         </Information>
       </Content>
@@ -71,13 +74,13 @@ function About(props) {
       <Tabs>
         <TabList>
           <Tab>
-            <Button text='Skills' small />
+            <BaseButton text='Skills' small />
           </Tab>
           <Tab>
-            <Button text='Experience' small />
+            <BaseButton text='Experience' small />
           </Tab>
           <Tab>
-            <Button text='Education' small />
+            <BaseButton text='Education' small />
           </Tab>
         </TabList>
 

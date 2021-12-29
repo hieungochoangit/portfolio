@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Typical from 'react-typical';
 
 // Routes
-import Button from '../Button';
+import BaseButton from '../BaseButton';
 import MainHero from '../MainHero';
 import { Link } from 'react-router-dom';
 
@@ -109,7 +109,7 @@ function Main(props) {
 
           <Center>
             <Link to='/about'>
-              <Button text='More About Me' />
+              <BaseButton text='More About Me' />
             </Link>
           </Center>
         </HeroIntro>
