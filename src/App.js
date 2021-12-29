@@ -87,10 +87,12 @@ const SettingPrimaryColor = styled.span`
   align-items: center;
   justify-content: center;
   animation: ${rotateKeyframes} 2s linear infinite;
+  background: transparent;
 
   svg {
     font-size: 40px;
     fill: var(--primary-color);
+    background: transparent;
   }
 `
 
@@ -104,6 +106,7 @@ const ListPrimaryColor = styled.div`
   align-items: center;
   transition: 1s;
   transform: ${props => props.showPrimaryList ? 'translateX(0)' : 'translateX(150%)'};
+  background: transparent;
 
   div:first-child {
     font-size: 12px;
@@ -114,8 +117,7 @@ const ListPrimaryColor = styled.div`
 const ColorBox = styled.div`
   width: 40px;
   height: 40px;
-  border-radius: 50%;
-  border: 2px solid ${props => props.theme.text};
+  border: 2px solid ${props => props.theme.body};
   margin: 2px 0;
   cursor: pointer;
   background: ${props => props.color};
@@ -179,7 +181,7 @@ function App() {
 
           <ListPrimaryColor showPrimaryList={showPrimaryList}>
             <div>Theme Colors</div>
-            <div>
+            <div style={{ background: 'transparent' }}>
               {primarys.map((color) => <ColorBox color={color} key={color} onClick={() => handleChangePrimaryColor(color)} />)}
             </div>
           </ListPrimaryColor>
