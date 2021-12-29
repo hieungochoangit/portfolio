@@ -5,6 +5,7 @@ import Typical from 'react-typical';
 // Routes
 import Button from '../Button';
 import MainHero from '../MainHero';
+import { Link } from 'react-router-dom';
 
 const MainSection = styled.div`
   width: 100vw;
@@ -107,7 +108,9 @@ function Main(props) {
           />
 
           <Center>
-            <Button text='More About Me' type='link' href='/about' />
+            <Link to='/about'>
+              <Button text='More About Me' />
+            </Link>
           </Center>
         </HeroIntro>
       </Hero>
