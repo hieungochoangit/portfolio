@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import CommonLayout from '../../Layouts/CommonLayout';
 import BaseShadowButton from '../../BaseShadowButton';
@@ -45,6 +45,11 @@ const ContentBox = styled.p`
 `
 
 function Contact(props) {
+
+  useEffect(() => {
+    document.title = 'Contact - hieuhn'
+  }, []);
+
   return (
     <CommonLayout subTitle='Contact' title='GET IN TOUCH'>
       <Content>
