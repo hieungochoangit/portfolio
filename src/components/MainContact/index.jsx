@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { BsFacebook, BsGithub, BsTelegram, BsInstagram, BsMailbox, BsLinkedin } from 'react-icons/bs';
 
 const Contact = styled.div`
-  position: absolute;
+  position: fixed;
   left: 2rem;
   bottom: 0;
   display: flex;
@@ -28,6 +28,9 @@ const Contact = styled.div`
     width: 100%;
     left: 0;
     font-size: 30px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 
     svg {
       &:hover {
