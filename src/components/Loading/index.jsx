@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -39,6 +39,10 @@ const BaseLoading = styled.div`
 `
 
 function Loading({ isLoading }) {
+
+  useEffect(() => {
+    document.title = 'Loading...'
+  }, []);
 
   return (
     <Wrapper isLoading={isLoading}>
