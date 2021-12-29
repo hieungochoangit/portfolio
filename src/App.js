@@ -1,6 +1,8 @@
 // Components
 import Main from "./components/Main";
 import About from "./components/Pages/About";
+import MainNav from "./components/MainNav";
+import MainContact from "./components/MainContact";
 import styled, { keyframes, ThemeProvider } from "styled-components";
 import GlobalStyle, { darkTheme, lightTheme } from "./global/globalStyle";
 import { useEffect, useState } from "react";
@@ -150,27 +152,33 @@ function App() {
 
       {isLoading ? <Loading isLoading={isLoading} /> : (
         <Wrapper>
-        <Routes>
-          <Route exact path="/" element={<Main />} />
-          <Route exact path="/about" element={<About />} />
-        </Routes>
+          {/* Nav */}
+          <MainNav />
 
-        <ToggleThemeButton onChange={() => handleToggleTheme()}>
-          <input type="checkbox" id="switch" className="switch-input"/>
-          <label htmlFor="switch" className="switch"></label>
-        </ToggleThemeButton>
+          <Routes>
+            <Route exact path="/" element={<Main />} />
+            <Route exact path="/about" element={<About />} />
+          </Routes>
 
-        {/* Handle change primary color */}
-        <SettingPrimaryColor onClick={handleToggleButtonChangePrimaryColor}>
-          <IoSettings />
-        </SettingPrimaryColor>
+          {/* Contact */}
+          <MainContact />
 
-        <ListPrimaryColor showPrimaryList={showPrimaryList}>
-          <div>Theme Colors</div>
-          <div>
-            {primarys.map((color) => <ColorBox color={color} key={color} onClick={() => handleChangePrimaryColor(color)} />)}
-          </div>
-        </ListPrimaryColor>
+          <ToggleThemeButton onChange={() => handleToggleTheme()}>
+            <input type="checkbox" id="switch" className="switch-input"/>
+            <label htmlFor="switch" className="switch"></label>
+          </ToggleThemeButton>
+
+          {/* Handle change primary color */}
+          <SettingPrimaryColor onClick={handleToggleButtonChangePrimaryColor}>
+            <IoSettings />
+          </SettingPrimaryColor>
+
+          <ListPrimaryColor showPrimaryList={showPrimaryList}>
+            <div>Theme Colors</div>
+            <div>
+              {primarys.map((color) => <ColorBox color={color} key={color} onClick={() => handleChangePrimaryColor(color)} />)}
+            </div>
+          </ListPrimaryColor>
         </Wrapper>
       )}
     </ThemeProvider>
