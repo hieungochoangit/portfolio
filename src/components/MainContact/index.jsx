@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { BsFacebook, BsGithub, BsTelegram, BsInstagram, BsMailbox, BsLinkedin } from 'react-icons/bs';
+import { BsFacebook, BsGithub, BsTelegram, BsLinkedin } from 'react-icons/bs';
 
 const Contact = styled.div`
   position: fixed;
