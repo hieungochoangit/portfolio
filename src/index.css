@@ -9,3 +9,29 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.react-tabs__tab-list {
+  border-bottom: none !important;
+  text-align: center;
+  margin-bottom: 40px !important;
+}
+
+.react-tabs__tab--selected {
+  background: unset !important;
+  border-color: unset !important;
+}
+
+.react-tabs__tab {
+  border: none !important;
+}
+
+.react-tabs__tab--selected::after {
+  position: absolute;
+  content: '';
+  width: 50%;
+  height: 4px;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--primary-color);
+}
