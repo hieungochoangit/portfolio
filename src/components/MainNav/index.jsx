@@ -51,7 +51,7 @@ const Menu = styled.div`
   background: ${props => props.theme.body};
   height: 100vh;
   z-index: 10;
-  transition: all 1s;
+  transition: all 0.5s;
   box-shadow: -10px 0px 10px 0px ${props => props.showMenu ? props.theme.text : props.theme.body};
   transform: translateX(${props => props.showMenu ? '0%' : '100%'});
 
