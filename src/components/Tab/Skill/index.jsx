@@ -40,7 +40,12 @@ function Skill(props) {
     },
     {
       id: 7,
-      name: 'Copy - Paste',
+      name: 'Teamwork',
+      percent: '80%',
+    },
+    {
+      id: 8,
+      name: 'Uống bia, rượu',
       percent: '100%',
     },
   ]
