@@ -22,6 +22,7 @@ const ToggleThemeButton = styled.div`
   bottom: 10px;
   right: 10px;
   display: inline;
+  background: transparent;
 
   @media (max-width: 500px) {
     bottom: 14%;
