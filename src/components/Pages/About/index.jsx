@@ -7,6 +7,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import Skill from '../../Tab/Skill';
 import Experience from '../../Tab/Experience';
+import Education from '../../Tab/Education';
 
 const Wrapper = styled.div`
   padding: 150px 10% 150px 10%;
@@ -110,7 +111,7 @@ function About(props) {
           <Experience />
         </TabPanel>
         <TabPanel>
-          <h2>Any content 3</h2>
+          <Education />
         </TabPanel>
       </Tabs>
     </Wrapper>

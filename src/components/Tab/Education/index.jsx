@@ -126,7 +126,7 @@ const Company = styled.h4`
   text-transform: uppercase;
 `
 
-function Experience(props) {
+function Education(props) {
   return (
     <Wrapper>
       <Line />
@@ -135,36 +135,32 @@ function Experience(props) {
         <BaseShadowButton>
           <TimelineDetail>
             <div><BsFillBagCheckFill /></div>
-            <TimelineTitle>March, 2021 - Present</TimelineTitle>
-            <Position>Web Developer</Position>
-            <Company>**************</Company>
-            <p>Build and develop user interface.</p>
-            <p>Managed, optimized, and updated PHP databases as necessary.</p>
-            <p>Developed UI web applications which processed, analyzed, and rendered data visually.</p>
-          </TimelineDetail>
-        </BaseShadowButton>
-      </TimelineItem>
-      <TimelineItem>
-        <BaseShadowButton>
-          <TimelineDetail>
-            <div><BsFillBagCheckFill /></div>
-            <TimelineTitle>November, 2020 - March, 2021</TimelineTitle>
-            <Position>PHP Developer</Position>
-            <Company>**************</Company>
-            <p>Build and develop user interface.</p>
-            <p>Managed, optimized, and updated PHP databases as necessary.</p>
-            <p>Developed UI web applications which processed, analyzed, and rendered data visually.</p>
-          </TimelineDetail>
-        </BaseShadowButton>
-      </TimelineItem>
-      <TimelineItem>
-        <BaseShadowButton>
-          <TimelineDetail>
-            <div><BsFillBagCheckFill /></div>
-            <TimelineTitle>Ago</TimelineTitle>
+            <TimelineTitle>2020 - Present</TimelineTitle>
             <Position>F8 - Fullstack.edu.vn</Position>
-            <Company>Self learning</Company>
+            <Company>Self Learning</Company>
             <p>HTML, CSS, JS and more.</p>
+          </TimelineDetail>
+        </BaseShadowButton>
+      </TimelineItem>
+      <TimelineItem>
+        <BaseShadowButton>
+          <TimelineDetail>
+            <div><BsFillBagCheckFill /></div>
+            <TimelineTitle>2015 - 2020</TimelineTitle>
+            <Position>ICTU University</Position>
+            <Company>E-commerce majors.</Company>
+            <p>Quit after 2 years</p>
+          </TimelineDetail>
+        </BaseShadowButton>
+      </TimelineItem>
+      <TimelineItem>
+        <BaseShadowButton>
+          <TimelineDetail>
+            <div><BsFillBagCheckFill /></div>
+            <TimelineTitle>2012 - 2015</TimelineTitle>
+            <Position>Cho Don high school</Position>
+            <Company>------</Company>
+            <p>Graduated in 2015</p>
           </TimelineDetail>
         </BaseShadowButton>
       </TimelineItem>
@@ -172,4 +168,4 @@ function Experience(props) {
   );
 }
 
-export default Experience;
+export default Education;
