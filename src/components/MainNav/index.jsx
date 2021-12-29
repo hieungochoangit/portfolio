@@ -119,8 +119,40 @@ function MainNav(props) {
   
   const [showMenu, setShowMenu] = useState(false);
 
+  const menus = [
+    {
+      id: 1,
+      url: '/',
+      name: 'Home',
+    },
+    {
+      id: 2,
+      url: '/about',
+      name: 'About me',
+    },
+    {
+      id: 3,
+      url: '/service',
+      name: 'Services',
+    },
+    {
+      id: 4,
+      url: '/portfolio',
+      name: 'Portfolio',
+    },
+    {
+      id: 5,
+      url: '/contact',
+      name: 'Contact',
+    },
+  ];
+
   const handleToggleMenu = () => {
     setShowMenu(!showMenu);
+  }
+
+  const handleCloseMenu = () => {
+    setShowMenu(false);
   }
 
   return (
@@ -137,18 +169,11 @@ function MainNav(props) {
       <Menu showMenu={showMenu}>
         <BsArrowBarRight onClick={handleToggleMenu} />
 
-        <Link to='/about'>
-          <span>About me</span>
-        </Link>
-        <Link to='/service'>
-          <span>Services</span>
-        </Link>
-        <Link to='/portfolio'>
-          <span>Portfolio</span>
-        </Link>
-        <Link to='/contact'>
-          <span>Contact</span>
-        </Link>
+        {menus.map((menu) => (
+          <Link to={menu.url} key={menu.id} onClick={handleCloseMenu}>
+            <span>{menu.name}</span>
+          </Link>
+        ))}
       </Menu>
     </>
   );
