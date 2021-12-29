@@ -8,27 +8,7 @@ import 'react-tabs/style/react-tabs.css';
 import Skill from '../../Tab/Skill';
 import Experience from '../../Tab/Experience';
 import Education from '../../Tab/Education';
-
-const Wrapper = styled.div`
-  padding: 150px 10% 150px 10%;
-  margin: 0 auto;
-
-  @media (max-width: 500px) {
-    padding: 150px 5% 150px 5%;
-  }
-`
-
-const SubTitle = styled.h3`
-  text-align: center;
-  text-transform: uppercase;
-  color: var(--primary-color);
-`
-
-const Title = styled(SubTitle)`
-  font-size: 30px;
-  color: ${props => props.theme.text};
-  margin-bottom: 50px;
-`
+import CommonLayout from '../../Layouts/CommonLayout';
 
 const Content = styled.div`
   display: flex;
@@ -73,10 +53,7 @@ function About(props) {
   }, []);
 
   return (
-    <Wrapper>
-      <SubTitle>Main Info</SubTitle>
-      <Title>About Me</Title>
-
+    <CommonLayout subTitle='Main Info' title='About Me'>
       <Content>
         <MainHero />
         <Information>
@@ -114,7 +91,7 @@ function About(props) {
           <Education />
         </TabPanel>
       </Tabs>
-    </Wrapper>
+    </CommonLayout>
   );
 }
 
