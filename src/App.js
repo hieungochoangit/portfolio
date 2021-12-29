@@ -12,6 +12,7 @@ import { IoSettings } from 'react-icons/io5';
 import { Routes, Route } from 'react-router-dom';
 import Loading from "./components/Loading";
 import Contact from "./components/Pages/Contact";
+import Service from "./components/Pages/Service";
 
 const Wrapper = styled.div``
 
@@ -160,6 +161,7 @@ function App() {
             <Route exact path="/" element={<Main />} />
             <Route exact path="/about" element={<About />} />
             <Route exact path="/contact" element={<Contact />} />
+            <Route exact path="/service" element={<Service />} />
           </Routes>
 
           {/* Contact */}
