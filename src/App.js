@@ -14,6 +14,7 @@ import Loading from "./components/Loading";
 import Contact from "./components/Pages/Contact";
 import Service from "./components/Pages/Service";
 import Portfolio from "./components/Pages/Portfolio";
+import ParticleBackground from "./components/ParticleBaclground";
 
 const Wrapper = styled.div``
 
@@ -23,6 +24,7 @@ const ToggleThemeButton = styled.div`
   right: 10px;
   display: inline;
   background: transparent;
+  z-index: 2;
 
   @media (max-width: 500px) {
     bottom: 14%;
@@ -90,6 +92,7 @@ const SettingPrimaryColor = styled.span`
   justify-content: center;
   animation: ${rotateKeyframes} 2s linear infinite;
   background: transparent;
+  z-index: 2;
 
   svg {
     font-size: 40px;
@@ -109,6 +112,7 @@ const ListPrimaryColor = styled.div`
   transition: 1s;
   transform: ${props => props.showPrimaryList ? 'translateX(0)' : 'translateX(150%)'};
   background: transparent;
+  z-index: 2;
 
   div:first-child {
     font-size: 12px;
@@ -158,6 +162,7 @@ function App() {
 
       {isLoading ? <Loading isLoading={isLoading} /> : (
         <Wrapper>
+          <ParticleBackground />
           {/* Nav */}
           <MainNav />
 

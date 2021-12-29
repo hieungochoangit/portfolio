@@ -12,6 +12,7 @@ const Nav = styled.nav`
   justify-content: space-between;
   z-index: 5;
   padding: 0 2rem;
+  background: transparent;
 `
 
 const Logo = styled.h1`
@@ -27,6 +28,7 @@ const Bar = styled.div`
   flex-direction: column;
   justify-content: space-between;
   flex-wrap: wrap-reverse;
+  background: transparent;
 `
 
 const Line = styled.span`

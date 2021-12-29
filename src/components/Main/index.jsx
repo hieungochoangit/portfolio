@@ -11,11 +11,15 @@ const MainSection = styled.div`
   width: 100vw;
   height: 100vh;
   padding: 2rem;
-  position: relative;
+  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: transparent;
 `
 
 const Hero = styled.div`
@@ -24,6 +28,7 @@ const Hero = styled.div`
   display: flex;
   align-items: center;
   padding: 40px;
+  background: transparent;
 
   &:after {
     position: absolute;
@@ -53,6 +58,7 @@ const Hero = styled.div`
 
 const HeroIntro = styled.div`
   margin: 10px 20px 0 20px;
+  background: transparent;
 
   span {
     color: var(--primary-color);
