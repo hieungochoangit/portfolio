@@ -80,7 +80,7 @@ function MainContact(props) {
       <a href="https://www.linkedin.com" target='_blank' rel="noreferrer">
         <BsLinkedin title='Linkedin' />
       </a>
-      <a href="https://github.com/hieungochoangit" target='_blank' rel="noreferrer">
+      <a href="https://github.com" target='_blank' rel="noreferrer">
         <BsGithub title='Github' />
       </a>
       <a href="https://www.facebook.com/hoangngochieu97/" target='_blank' rel="noreferrer">
