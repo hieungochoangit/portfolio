@@ -14,7 +14,7 @@ import Loading from "./components/Loading";
 import Contact from "./components/Pages/Contact";
 import Service from "./components/Pages/Service";
 import Portfolio from "./components/Pages/Portfolio";
-import ParticleBackground from "./components/ParticleBaclground";
+import ParticleBackground from "./components/ParticleBackground";
 
 const Wrapper = styled.div``
 
