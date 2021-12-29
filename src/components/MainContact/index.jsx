@@ -14,12 +14,36 @@ const Contact = styled.div`
   font-size: 24px;
 
   a {
-    display: inline-block;
-    margin: 4px 0;
+    display: inline-flex;
+    margin: 10px 0;
+    padding: 4px;
+
+    &:first-of-type {
+      margin-top: 24px;
+    }
+
+    &:last-of-type {
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: 500px) {
+      &:first-of-type {
+        margin-top: 10px;
+      }
+  
+      &:last-of-type {
+        margin-bottom: 10px;
+      }
+    }
   }
 
   svg {
+    transition: 0.5s;
     cursor: pointer;
+
+    &:hover {
+      fill: var(--primary-color);
+    }
   }
 
   @media (max-width: 500px) {
@@ -50,16 +74,10 @@ function MainContact(props) {
   return (
     <Contact>
       <ContactLine />
-      <a href="https://github.com/hieungochoangit" target='_blank' rel="noreferrer">
-        <BsMailbox title='Mail' />
-      </a>
-      <a href="https://github.com/hieungochoangit" target='_blank' rel="noreferrer">
-        <BsInstagram title='Instagram' />
-      </a>
-      <a href="https://github.com/hieungochoangit" target='_blank' rel="noreferrer">
+      <a href="https://web.telegram.org" target='_blank' rel="noreferrer">
         <BsTelegram title='Telegram' />
       </a>
-      <a href="https://www.linkedin.com/in/hieungochoang/" target='_blank' rel="noreferrer">
+      <a href="https://www.linkedin.com" target='_blank' rel="noreferrer">
         <BsLinkedin title='Linkedin' />
       </a>
       <a href="https://github.com/hieungochoangit" target='_blank' rel="noreferrer">
