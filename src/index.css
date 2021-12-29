@@ -23,6 +23,7 @@ code {
 
 .react-tabs__tab {
   border: none !important;
+  padding: 6px !important;
 }
 
 .react-tabs__tab--selected::after {
