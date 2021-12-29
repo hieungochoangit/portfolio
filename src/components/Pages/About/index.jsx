@@ -6,10 +6,15 @@ import MainHero from '../../MainHero';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import Skill from '../../Tab/Skill';
+import Experience from '../../Tab/Experience';
 
 const Wrapper = styled.div`
   padding: 150px 10% 150px 10%;
   margin: 0 auto;
+
+  @media (max-width: 500px) {
+    padding: 150px 5% 150px 5%;
+  }
 `
 
 const SubTitle = styled.h3`
@@ -102,7 +107,7 @@ function About(props) {
           <Skill />
         </TabPanel>
         <TabPanel>
-          <h2>Any content 2</h2>
+          <Experience />
         </TabPanel>
         <TabPanel>
           <h2>Any content 3</h2>
