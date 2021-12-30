@@ -68,7 +68,11 @@ const Contact = styled.div`
 const ContactLine = styled.div`
   width: 4px;
   height: 100px;
-  background: ${props => props.theme.text}
+  background: ${props => props.theme.text};
+
+  @media (max-width: 500px) {
+    height: 70px;
+  }
 `
 
 function MainContact(props) {
