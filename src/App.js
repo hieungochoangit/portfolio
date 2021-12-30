@@ -19,16 +19,9 @@ import ParticleBackground from "./components/ParticleBackground";
 const Wrapper = styled.div``
 
 const ToggleThemeButton = styled.div`
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  display: inline;
   background: transparent;
-  z-index: 2;
-
-  @media (max-width: 500px) {
-    bottom: 14%;
-  }
+  transform: rotate(90deg);
+  margin-top: 26px;
 
   .switch {
     position: relative;
@@ -177,11 +170,6 @@ function App() {
           {/* Contact */}
           <MainContact />
 
-          <ToggleThemeButton onChange={() => handleToggleTheme()}>
-            <input type="checkbox" id="switch" className="switch-input"/>
-            <label htmlFor="switch" className="switch"></label>
-          </ToggleThemeButton>
-
           {/* Handle change primary color */}
           <SettingPrimaryColor onClick={handleToggleButtonChangePrimaryColor}>
             <IoSettings />
@@ -192,6 +180,12 @@ function App() {
             <div style={{ background: 'transparent' }}>
               {primarys.map((color) => <ColorBox color={color} key={color} onClick={() => handleChangePrimaryColor(color)} />)}
             </div>
+
+            {/* Toggle Theme */}
+            <ToggleThemeButton onChange={() => handleToggleTheme()}>
+              <input type="checkbox" id="switch" className="switch-input"/>
+              <label htmlFor="switch" className="switch"></label>
+            </ToggleThemeButton>
           </ListPrimaryColor>
         </Wrapper>
       )}
