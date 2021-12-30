@@ -130,6 +130,12 @@ function App() {
   // Primary color list
   const primarys = ['red', 'blue', 'orange', 'green', 'pink'];
 
+  // Get random primary color
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * primarys.length);
+    document.documentElement.style.setProperty('--primary-color', primarys[randomIndex]);
+  }, []);
+
   const handleToggleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
   }
