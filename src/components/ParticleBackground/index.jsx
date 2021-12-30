@@ -1,5 +1,5 @@
 import React from 'react';
-import Particles from "tsparticles";
+import Particles from "react-particles-js";
 
 
 function ParticleBackground(props) {
