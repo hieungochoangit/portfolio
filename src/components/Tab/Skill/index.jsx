@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import styled from 'styled-components';
 import Progress from '../../Progress';
 
@@ -11,42 +11,42 @@ function Skill(props) {
     {
       id: 1,
       name: 'HTML',
-      percent: '90%',
+      percent: 80,
     },
     {
       id: 2,
       name: 'CSS',
-      percent: '70%',
+      percent: 60,
     },
     {
       id: 3,
       name: 'JS',
-      percent: '60%',
+      percent: 50,
     },
     {
       id: 4,
       name: 'ReactJs',
-      percent: '30%',
+      percent: 20,
     },
     {
       id: 5,
       name: 'PHP - Laravel',
-      percent: '60%',
+      percent: 50,
     },
     {
       id: 6,
       name: 'Database (MySql, NoSql)',
-      percent: '30%',
+      percent: 20,
     },
     {
       id: 7,
       name: 'Teamwork',
-      percent: '80%',
+      percent: 80,
     },
     {
       id: 8,
       name: 'Uống bia, rượu',
-      percent: '100%',
+      percent: 100,
     },
   ]
 
@@ -57,4 +57,4 @@ function Skill(props) {
   );
 }
 
-export default Skill;
+export default memo(Skill);

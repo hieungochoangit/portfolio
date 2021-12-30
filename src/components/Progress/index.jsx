@@ -12,8 +12,8 @@ const Header = styled.div`
 
   p {
     position: absolute;
-    left: ${props => props.percent};
-    transform: translateX(-${props => props.percent});
+    left: ${props => props.percent}%;
+    transform: translateX(-${props => props.percent}%);
 
     @media (max-width: 768px) {
       left: 100%;
@@ -33,7 +33,7 @@ const ProgressLine = styled.div`
 const ProgressPercent = styled.div`
   height: 100%;
   border-radius: 10px;
-  width: ${props => props.percent};
+  width: ${props => props.percent}%;
   background: ${props => props.theme.body};
 `
 
@@ -42,7 +42,7 @@ function Progress({ skill }) {
     <ProgressBar>
       <Header percent={skill.percent}>
         <span>{skill.name}</span>
-        <p>{skill.percent}</p>
+        <p>{skill.percent}%</p>
       </Header>
       <ProgressLine>
         <ProgressPercent percent={skill.percent}></ProgressPercent>

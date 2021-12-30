@@ -3,13 +3,9 @@ import Particles from "react-tsparticles";
 
 
 function ParticleBackground(props) {
-  const particlesInit = (main) => {
-    console.log(main);
-  };
+  const particlesInit = (main) => {};
 
-  const particlesLoaded = (container) => {
-    console.log(container);
-  };
+  const particlesLoaded = (container) => {};
 
   return (
     <Particles
