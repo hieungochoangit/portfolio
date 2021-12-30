@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  padding: 150px 10% 150px 10%;
+  padding: 150px 10% 30px 10%;
   margin: 0 auto;
   position: absolute;
   z-index: 2;
@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   background: transparent;
 
   @media (max-width: 500px) {
-    padding: 150px 5% 150px 5%;
+    padding: 150px 5% 80px 5%;
   }
 `
 
