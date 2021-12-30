@@ -109,7 +109,7 @@ function Main(props) {
           <h1><span>Hi,</span> I'm HieuNgocHoang</h1>
 
           <Typical
-            steps={["I'm a Frontend Developer ", 7000, "I'm a Copy - Paste Developer", 5000]}
+            steps={["I'm a Frontend Developer 💻", 7000, "I'm a Copy - Paste Developer 😄", 5000]}
             loop={Infinity}
           />
 
