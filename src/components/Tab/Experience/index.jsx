@@ -37,7 +37,7 @@ const TimelineItem = styled.div`
     @media (max-width: 768px) {
       left: 0px;
       padding-right: 0;
-      padding-left: 50px;
+      padding-left: 40px;
       text-align: left;
     }
   }
@@ -48,7 +48,7 @@ const TimelineItem = styled.div`
     position: relative;
     
     @media (max-width: 768px) {
-      padding-left: 50px;
+      padding-left: 40px;
     }
   }
 
@@ -63,6 +63,7 @@ const TimelineItem = styled.div`
 
     @media (max-width: 768px) {
       left: 0px;
+      width: 40px;
     }
   }
 
@@ -77,6 +78,7 @@ const TimelineItem = styled.div`
 
     @media (max-width: 768px) {
       left: 0px;
+      width: 40px;
     }
   }
 `
