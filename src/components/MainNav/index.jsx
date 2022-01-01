@@ -160,7 +160,7 @@ function MainNav(props) {
   return (
     <>
       <Nav>
-        <Logo>Hieu</Logo>
+        <Logo>Hieu 2022 <span style={{ color: 'red' }}>💖</span></Logo>
         <Bar onClick={handleToggleMenu}>
           <Line />
           <Line />
