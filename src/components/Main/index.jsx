@@ -107,6 +107,7 @@ function Main(props) {
         <MainHero />
         <HeroIntro>
           <h1><span>Hi,</span> I'm HieuNgocHoang</h1>
+          <h3>2022</h3>
 
           <Typical
             steps={["I'm a Frontend Developer 💻", 7000, "I'm a Copy - Paste Developer 😄", 5000]}
